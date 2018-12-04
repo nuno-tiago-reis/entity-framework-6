@@ -58,12 +58,12 @@ namespace VidzyDatabaseFirst
 
 			foreach (var video in videos)
 			{
-				context.AddVideo(video.Name, video.ReleaseDate, "Fantasy");
+				context.AddVideo(video.Name, video.ReleaseDate, "Fantasy", (byte)Classification.Gold);
 			}
 
 			foreach (var video in context.Videos)
 			{
-				Console.WriteLine($"{video.Name}: {video.ReleaseDate}");
+				Console.WriteLine($"{video.Name} ({video.Classification}): {video.ReleaseDate}");
 			}
 		}
 	}

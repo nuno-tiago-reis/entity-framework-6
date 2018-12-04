@@ -67,6 +67,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Classification.cs">
+      <DependentUpon>Vidzy.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Genre.cs">
       <DependentUpon>Vidzy.tt</DependentUpon>
     </Compile>
@@ -103,9 +106,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\Vidzy.mdf" />
+    <Content Include="Database\Vidzy.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Database\Vidzy_log.ldf">
       <DependentUpon>Vidzy.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Model\Vidzy.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

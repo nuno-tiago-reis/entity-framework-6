@@ -123,9 +123,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\Pluto.mdf" />
+    <Content Include="Database\Pluto.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Database\Pluto_log.ldf">
       <DependentUpon>Pluto.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Model\Pluto.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

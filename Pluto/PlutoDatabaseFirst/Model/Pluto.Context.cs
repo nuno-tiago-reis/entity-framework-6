@@ -12,6 +12,8 @@ namespace PlutoDatabaseFirst.Model
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class PlutoDbContext : DbContext
     {
@@ -31,5 +33,81 @@ namespace PlutoDatabaseFirst.Model
         public virtual DbSet<Post> Posts { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<tblUser> tblUsers { get; set; }
+        public virtual DbSet<UserProfile> UserProfiles { get; set; }
+    
+        public virtual int DeleteCourse(Nullable<int> courseID)
+        {
+            var courseIDParameter = courseID.HasValue ?
+                new ObjectParameter("CourseID", courseID) :
+                new ObjectParameter("CourseID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteCourse", courseIDParameter);
+        }
+    
+        [DbFunction("PlutoDbContext", "GetAuthorCourses")]
+        public virtual IQueryable<Course> GetAuthorCourses(Nullable<int> authorID)
+        {
+            var authorIDParameter = authorID.HasValue ?
+                new ObjectParameter("AuthorID", authorID) :
+                new ObjectParameter("AuthorID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Course>("[PlutoDbContext].[GetAuthorCourses](@AuthorID)", authorIDParameter);
+        }
+    
+        public virtual ObjectResult<Course> GetCourses()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Course>("GetCourses");
+        }
+    
+        public virtual ObjectResult<Course> GetCourses(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Course>("GetCourses", mergeOption);
+        }
+    
+        public virtual int InsertCourse(Nullable<int> authorID, string title, string description, Nullable<short> fullPrice, Nullable<short> level)
+        {
+            var authorIDParameter = authorID.HasValue ?
+                new ObjectParameter("AuthorID", authorID) :
+                new ObjectParameter("AuthorID", typeof(int));
+    
+            var titleParameter = title != null ?
+                new ObjectParameter("Title", title) :
+                new ObjectParameter("Title", typeof(string));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var fullPriceParameter = fullPrice.HasValue ?
+                new ObjectParameter("FullPrice", fullPrice) :
+                new ObjectParameter("FullPrice", typeof(short));
+    
+            var levelParameter = level.HasValue ?
+                new ObjectParameter("Level", level) :
+                new ObjectParameter("Level", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertCourse", authorIDParameter, titleParameter, descriptionParameter, fullPriceParameter, levelParameter);
+        }
+    
+        public virtual int UpdateCourse(Nullable<int> courseID, string title, string description, Nullable<short> level)
+        {
+            var courseIDParameter = courseID.HasValue ?
+                new ObjectParameter("CourseID", courseID) :
+                new ObjectParameter("CourseID", typeof(int));
+    
+            var titleParameter = title != null ?
+                new ObjectParameter("Title", title) :
+                new ObjectParameter("Title", typeof(string));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var levelParameter = level.HasValue ?
+                new ObjectParameter("Level", level) :
+                new ObjectParameter("Level", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCourse", courseIDParameter, titleParameter, descriptionParameter, levelParameter);
+        }
     }
 }

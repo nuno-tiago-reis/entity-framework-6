@@ -4,71 +4,77 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="Pluto.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
+    <Schema Namespace="Pluto.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Authors">
           <Key>
             <PropertyRef Name="AuthorID" />
           </Key>
-          <Property Name="AuthorID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Name" Nullable="false" MaxLength="255" Type="varchar" />
+          <Property Name="AuthorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="Courses">
           <Key>
             <PropertyRef Name="CourseID" />
           </Key>
-          <Property Name="CourseID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="AuthorID" Nullable="false" Type="int" />
-          <Property Name="Title" Nullable="false" MaxLength="255" Type="varchar" />
-          <Property Name="Description" Nullable="false" MaxLength="8000" Type="varchar" />
-          <Property Name="Price" Nullable="false" Type="smallint" />
-          <Property Name="LevelString" Nullable="false" MaxLength="50" Type="varchar" />
-          <Property Name="Level" Nullable="false" Type="tinyint" />
+          <Property Name="CourseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AuthorID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="8000" Nullable="false" />
+          <Property Name="FullPrice" Type="smallint" Nullable="false" />
+          <Property Name="Level" Type="smallint" Nullable="false" />
         </EntityType>
         <EntityType Name="CourseSections">
           <Key>
             <PropertyRef Name="SectionID" />
           </Key>
-          <Property Name="SectionID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="CourseID" Nullable="false" Type="int" />
-          <Property Name="Title" Nullable="false" MaxLength="255" Type="varchar" />
+          <Property Name="SectionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="CourseTags">
           <Key>
             <PropertyRef Name="CourseID" />
             <PropertyRef Name="TagID" />
           </Key>
-          <Property Name="CourseID" Nullable="false" Type="int" />
-          <Property Name="TagID" Nullable="false" Type="int" />
+          <Property Name="CourseID" Type="int" Nullable="false" />
+          <Property Name="TagID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Posts">
           <Key>
             <PropertyRef Name="PostID" />
           </Key>
-          <Property Name="PostID" Nullable="false" Type="int" />
-          <Property Name="DatePublished" Nullable="false" Type="smalldatetime" />
-          <Property Name="Title" Nullable="false" MaxLength="255" Type="varchar" />
-          <Property Name="Body" Nullable="false" MaxLength="8000" Type="varchar" />
+          <Property Name="PostID" Type="int" Nullable="false" />
+          <Property Name="DatePublished" Type="smalldatetime" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Body" Type="varchar" MaxLength="8000" Nullable="false" />
         </EntityType>
         <EntityType Name="Tags">
           <Key>
             <PropertyRef Name="TagID" />
           </Key>
-          <Property Name="TagID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="Name" Nullable="false" MaxLength="50" Type="varchar" />
+          <Property Name="TagID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tblUser">
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="UserID" Nullable="false" Type="int" />
-          <Property Name="Username" Nullable="false" MaxLength="50" Type="varchar" />
-          <Property Name="Password" Nullable="false" Type="int" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserProfiles">
+          <Key>
+            <PropertyRef Name="UserProfileID" />
+          </Key>
+          <Property Name="UserProfileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Courses_Authors">
-          <End Type="Self.Authors" Multiplicity="1" Role="Authors">
+          <End Role="Authors" Type="Self.Authors" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="Self.Courses" Multiplicity="*" Role="Courses" />
+          <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Authors">
               <PropertyRef Name="AuthorID" />
@@ -79,10 +85,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CourseSections_Courses">
-          <End Type="Self.Courses" Multiplicity="1" Role="Courses">
+          <End Role="Courses" Type="Self.Courses" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="Self.CourseSections" Multiplicity="*" Role="CourseSections" />
+          <End Role="CourseSections" Type="Self.CourseSections" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Courses">
               <PropertyRef Name="CourseID" />
@@ -93,10 +99,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CourseTags_Courses">
-          <End Type="Self.Courses" Multiplicity="1" Role="Courses">
+          <End Role="Courses" Type="Self.Courses" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="Self.CourseTags" Multiplicity="*" Role="CourseTags" />
+          <End Role="CourseTags" Type="Self.CourseTags" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Courses">
               <PropertyRef Name="CourseID" />
@@ -107,10 +113,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CourseTags_Tags">
-          <End Type="Self.Tags" Multiplicity="1" Role="Tags">
+          <End Role="Tags" Type="Self.Tags" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="Self.CourseTags" Multiplicity="*" Role="CourseTags" />
+          <End Role="CourseTags" Type="Self.CourseTags" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tags">
               <PropertyRef Name="TagID" />
@@ -120,6 +126,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="DeleteCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CourseID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="funcGetAuthorCourses" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AuthorID" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="CourseID" Type="int" Nullable="false" />
+                <Property Name="AuthorID" Type="int" Nullable="false" />
+                <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
+                <Property Name="Description" Type="varchar" MaxLength="8000" Nullable="false" />
+                <Property Name="Price" Type="smallint" Nullable="false" />
+                <Property Name="LevelString" Type="varchar" MaxLength="50" Nullable="false" />
+                <Property Name="Level" Type="tinyint" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetCourses" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="InsertCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AuthorID" Type="int" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="Description" Type="varchar" Mode="In" />
+          <Parameter Name="FullPrice" Type="smallint" Mode="In" />
+          <Parameter Name="Level" Type="smallint" Mode="In" />
+        </Function>
+        <Function Name="UpdateCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CourseID" Type="int" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="Description" Type="varchar" Mode="In" />
+          <Parameter Name="Level" Type="smallint" Mode="In" />
+        </Function>
         <EntityContainer Name="PlutoModelStoreContainer">
           <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
@@ -128,25 +167,25 @@
           <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tags" EntityType="Self.Tags" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProfiles" EntityType="Self.UserProfiles" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Courses_Authors" Association="Self.FK_Courses_Authors">
-            <End EntitySet="Authors" Role="Authors" />
-            <End EntitySet="Courses" Role="Courses" />
+            <End Role="Authors" EntitySet="Authors" />
+            <End Role="Courses" EntitySet="Courses" />
           </AssociationSet>
           <AssociationSet Name="FK_CourseSections_Courses" Association="Self.FK_CourseSections_Courses">
-            <End EntitySet="Courses" Role="Courses" />
-            <End EntitySet="CourseSections" Role="CourseSections" />
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="CourseSections" EntitySet="CourseSections" />
           </AssociationSet>
           <AssociationSet Name="FK_CourseTags_Courses" Association="Self.FK_CourseTags_Courses">
-            <End EntitySet="Courses" Role="Courses" />
-            <End EntitySet="CourseTags" Role="CourseTags" />
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="CourseTags" EntitySet="CourseTags" />
           </AssociationSet>
           <AssociationSet Name="FK_CourseTags_Tags" Association="Self.FK_CourseTags_Tags">
-            <End EntitySet="Tags" Role="Tags" />
-            <End EntitySet="CourseTags" Role="CourseTags" />
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="CourseTags" EntitySet="CourseTags" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Pluto.Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -166,12 +205,11 @@
           <Property Name="AuthorID" Type="Int32" Nullable="false" />
           <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Price" Type="Int16" Nullable="false" />
-          <Property Name="LevelString" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Level" Type="Byte" Nullable="false" />
           <NavigationProperty Name="Author" Relationship="Self.FK_Courses_Authors" FromRole="Courses" ToRole="Authors" />
           <NavigationProperty Name="CourseSections" Relationship="Self.FK_CourseSections_Courses" FromRole="Courses" ToRole="CourseSections" />
           <NavigationProperty Name="Tags" Relationship="Self.CourseTags" FromRole="Courses" ToRole="Tags" />
+          <Property Name="FullPrice" Type="Int16" Nullable="false" />
         </EntityType>
         <EntityType Name="CourseSection">
           <Key>
@@ -258,7 +296,35 @@
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Tags" EntitySet="Tags" />
           </AssociationSet>
+          <EntitySet Name="UserProfiles" EntityType="Pluto.Model.UserProfile" />
+          <FunctionImport Name="DeleteCourse">
+            <Parameter Name="CourseID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetAuthorCourses" IsComposable="true" EntitySet="Courses" ReturnType="Collection(Pluto.Model.Course)">
+            <Parameter Name="AuthorID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetCourses" EntitySet="Courses" ReturnType="Collection(Pluto.Model.Course)" />
+          <FunctionImport Name="InsertCourse">
+            <Parameter Name="AuthorID" Mode="In" Type="Int32" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="FullPrice" Mode="In" Type="Int16" />
+            <Parameter Name="Level" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateCourse">
+            <Parameter Name="CourseID" Mode="In" Type="Int32" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="Level" Mode="In" Type="Int16" />
+          </FunctionImport>
         </EntityContainer>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserProfileID" />
+          </Key>
+          <Property Name="UserProfileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -276,12 +342,11 @@
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="Pluto.Model.Course">
               <MappingFragment StoreEntitySet="Courses">
+                <ScalarProperty Name="FullPrice" ColumnName="FullPrice" />
                 <ScalarProperty Name="CourseID" ColumnName="CourseID" />
                 <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="LevelString" ColumnName="LevelString" />
                 <ScalarProperty Name="Level" ColumnName="Level" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -330,6 +395,21 @@
               <ScalarProperty Name="TagID" ColumnName="TagID" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="Pluto.Model.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfiles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserProfileID" ColumnName="UserProfileID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="DeleteCourse" FunctionName="Pluto.Model.Store.DeleteCourse" />
+          <FunctionImportMapping FunctionImportName="GetAuthorCourses" FunctionName="Pluto.Model.Store.funcGetAuthorCourses">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCourses" FunctionName="Pluto.Model.Store.GetCourses">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertCourse" FunctionName="Pluto.Model.Store.InsertCourse" />
+          <FunctionImportMapping FunctionImportName="UpdateCourse" FunctionName="Pluto.Model.Store.UpdateCourse" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

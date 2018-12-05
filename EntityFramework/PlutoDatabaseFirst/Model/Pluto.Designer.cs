@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Documents\Repositories\entity-framework-6\Pluto\PlutoDatabaseFirst\Model\Pluto.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Documents\Repositories\entity-framework-6\EntityFramework\PlutoDatabaseFirst\Model\Pluto.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

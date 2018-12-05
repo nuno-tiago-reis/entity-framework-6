@@ -117,19 +117,12 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Pluto.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="packages.config" />
     <None Include="Model\Pluto.edmx.diagram">
       <DependentUpon>Pluto.edmx</DependentUpon>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\Pluto.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database\Pluto_log.ldf">
-      <DependentUpon>Pluto.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Model\Pluto.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Pluto.Context.cs</LastGenOutput>

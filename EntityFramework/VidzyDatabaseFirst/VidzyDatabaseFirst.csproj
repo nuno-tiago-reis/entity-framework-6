@@ -106,13 +106,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\Vidzy.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database\Vidzy_log.ldf">
-      <DependentUpon>Vidzy.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Model\Vidzy.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Vidzy.edmx</DependentUpon>

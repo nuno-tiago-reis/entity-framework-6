@@ -314,7 +314,7 @@
             <Parameter Name="Level" Mode="In" Type="Int16" />
           </FunctionImport>
           <FunctionImport Name="GetAuthorCourses" IsComposable="true" EntitySet="Courses" ReturnType="Collection(Pluto.Model.Course)">
-            <Parameter Name="AuthorID" Mode="In" Type="Int32" />
+          <Parameter Name="AuthorID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="UserProfile">

@@ -108,6 +108,18 @@
     <Compile Include="Migrations\201812051342545_DeleteCategoriesTable.Designer.cs">
       <DependentUpon>201812051342545_DeleteCategoriesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812051504273_UpdatedNullableColumnsInAuthorsTable.cs" />
+    <Compile Include="Migrations\201812051504273_UpdatedNullableColumnsInAuthorsTable.Designer.cs">
+      <DependentUpon>201812051504273_UpdatedNullableColumnsInAuthorsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051505020_UpdatedNullableColumnsInCoursesTable.cs" />
+    <Compile Include="Migrations\201812051505020_UpdatedNullableColumnsInCoursesTable.Designer.cs">
+      <DependentUpon>201812051505020_UpdatedNullableColumnsInCoursesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051506055_UpdatedNullableColumnsInTagsTable.cs" />
+    <Compile Include="Migrations\201812051506055_UpdatedNullableColumnsInTagsTable.Designer.cs">
+      <DependentUpon>201812051506055_UpdatedNullableColumnsInTagsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Conventions\ForeignKeyNamingConvention.cs" />
     <Compile Include="Model\Conventions\IndexNamingConvention.cs" />
@@ -166,6 +178,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812051342545_DeleteCategoriesTable.resx">
       <DependentUpon>201812051342545_DeleteCategoriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051504273_UpdatedNullableColumnsInAuthorsTable.resx">
+      <DependentUpon>201812051504273_UpdatedNullableColumnsInAuthorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051505020_UpdatedNullableColumnsInCoursesTable.resx">
+      <DependentUpon>201812051505020_UpdatedNullableColumnsInCoursesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051506055_UpdatedNullableColumnsInTagsTable.resx">
+      <DependentUpon>201812051506055_UpdatedNullableColumnsInTagsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

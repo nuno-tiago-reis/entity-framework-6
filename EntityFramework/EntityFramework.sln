@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlutoDatabaseFirst", "Pluto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VidzyDatabaseFirst", "VidzyDatabaseFirst\VidzyDatabaseFirst.csproj", "{FBEE77EE-C570-4412-B71C-4CD1808494C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlutoCodeFirst", "PlutoCodeFirst\PlutoCodeFirst.csproj", "{3C42D773-699B-4FEF-A7BA-887B57172225}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FBEE77EE-C570-4412-B71C-4CD1808494C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBEE77EE-C570-4412-B71C-4CD1808494C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBEE77EE-C570-4412-B71C-4CD1808494C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C42D773-699B-4FEF-A7BA-887B57172225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C42D773-699B-4FEF-A7BA-887B57172225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C42D773-699B-4FEF-A7BA-887B57172225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C42D773-699B-4FEF-A7BA-887B57172225}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -136,7 +136,14 @@
     <Compile Include="Migrations\201812051523185_UpdatedDescriptionColumnLengthInCoursesTable.Designer.cs">
       <DependentUpon>201812051523185_UpdatedDescriptionColumnLengthInCoursesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812051758161_RenamedTagCoursesToCourseTags.cs" />
+    <Compile Include="Migrations\201812051758161_RenamedTagCoursesToCourseTags.Designer.cs">
+      <DependentUpon>201812051758161_RenamedTagCoursesToCourseTags.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Configurations\AuthorConfiguration.cs" />
+    <Compile Include="Model\Configurations\TagConfiguration.cs" />
+    <Compile Include="Model\Configurations\CourseConfiguration.cs" />
     <Compile Include="Model\Conventions\ForeignKeyNamingConvention.cs" />
     <Compile Include="Model\Conventions\IndexNamingConvention.cs" />
     <Compile Include="Model\Tables\Tag.cs" />
@@ -215,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812051523185_UpdatedDescriptionColumnLengthInCoursesTable.resx">
       <DependentUpon>201812051523185_UpdatedDescriptionColumnLengthInCoursesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051758161_RenamedTagCoursesToCourseTags.resx">
+      <DependentUpon>201812051758161_RenamedTagCoursesToCourseTags.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

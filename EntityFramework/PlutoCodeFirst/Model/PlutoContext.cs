@@ -32,8 +32,14 @@ namespace PlutoCodeFirst.Model
 		{
 			base.OnModelCreating(modelBuilder);
 
+			// Modify the index and foreign key conventions
 			modelBuilder.Conventions.Add(new IndexNamingConvention());
 			modelBuilder.Conventions.Add(new ForeignKeyNamingConvention());
+
+			// Modify the configurations
+			modelBuilder.Configurations.Add(new AuthorConfiguration());
+			modelBuilder.Configurations.Add(new CourseConfiguration());
+			modelBuilder.Configurations.Add(new TagConfiguration());
 		}
 	}
 }

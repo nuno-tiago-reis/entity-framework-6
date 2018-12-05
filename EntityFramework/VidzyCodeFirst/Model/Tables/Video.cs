@@ -2,6 +2,13 @@
 
 namespace VidzyCodeFirst.Model
 {
+	public enum Classification
+	{
+		Bronze = 0,
+		Silver = 1,
+		Gold = 2
+	}
+
 	public sealed class Video
 	{
 		/// <summary>
@@ -18,6 +25,11 @@ namespace VidzyCodeFirst.Model
 		/// Gets or sets the genre.
 		/// </summary>
 		public Genre Genre { get; set; }
+
+		/// <summary>
+		/// Gets or sets the classification.
+		/// </summary>
+		public Classification Classification { get; set; }
 
 		/// <summary>
 		/// Gets or sets the release date.

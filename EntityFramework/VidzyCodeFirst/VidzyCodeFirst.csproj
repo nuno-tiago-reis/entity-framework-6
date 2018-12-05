@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201812051426025_AddGenreColumnToVideosTable.Designer.cs">
       <DependentUpon>201812051426025_AddGenreColumnToVideosTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812051428252_AddClassificationColumnToVideosTable.cs" />
+    <Compile Include="Migrations\201812051428252_AddClassificationColumnToVideosTable.Designer.cs">
+      <DependentUpon>201812051428252_AddClassificationColumnToVideosTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Conventions\ForeignKeyNamingConvention.cs" />
     <Compile Include="Model\Conventions\IndexNamingConvention.cs" />
@@ -88,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812051426025_AddGenreColumnToVideosTable.resx">
       <DependentUpon>201812051426025_AddGenreColumnToVideosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051428252_AddClassificationColumnToVideosTable.resx">
+      <DependentUpon>201812051428252_AddClassificationColumnToVideosTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

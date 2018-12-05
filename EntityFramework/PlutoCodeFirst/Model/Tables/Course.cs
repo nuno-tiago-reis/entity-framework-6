@@ -27,19 +27,24 @@ namespace PlutoCodeFirst.Model
 		public string Description { get; set; }
 
 		/// <summary>
-		/// Gets or sets the level.
-		/// </summary>
-		public CourseLevel Level { get; set; }
-
-		/// <summary>
 		/// Gets or sets the full price.
 		/// </summary>
 		public float FullPrice { get; set; }
 
 		/// <summary>
+		/// Gets or sets the level.
+		/// </summary>
+		public CourseLevel Level { get; set; }
+
+		/// <summary>
 		/// Gets or sets the author.
 		/// </summary>
 		public Author Author { get; set; }
+
+		/// <summary>
+		/// Gets or sets the category.
+		/// </summary>
+		public Category Category { get; set; }
 
 		/// <summary>
 		/// Gets or sets the tags.

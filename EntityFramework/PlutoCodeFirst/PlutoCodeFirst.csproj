@@ -68,13 +68,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201812051203330_InitialModel.cs" />
-    <Compile Include="Migrations\201812051203330_InitialModel.Designer.cs">
-      <DependentUpon>201812051203330_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201812051258427_InitialModel.cs" />
+    <Compile Include="Migrations\201812051258427_InitialModel.Designer.cs">
+      <DependentUpon>201812051258427_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051300120_AddCategoriesTable.cs" />
+    <Compile Include="Migrations\201812051300120_AddCategoriesTable.Designer.cs">
+      <DependentUpon>201812051300120_AddCategoriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051311388_AddCategoryColumnToCoursesTable.cs" />
+    <Compile Include="Migrations\201812051311388_AddCategoryColumnToCoursesTable.Designer.cs">
+      <DependentUpon>201812051311388_AddCategoryColumnToCoursesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051318025_PopulateAuthors.cs" />
+    <Compile Include="Migrations\201812051318025_PopulateAuthors.Designer.cs">
+      <DependentUpon>201812051318025_PopulateAuthors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051322364_PopulateCourses.cs" />
+    <Compile Include="Migrations\201812051322364_PopulateCourses.Designer.cs">
+      <DependentUpon>201812051322364_PopulateCourses.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Conventions\ForeignKeyNamingConvention.cs" />
     <Compile Include="Model\Conventions\IndexNamingConvention.cs" />
+    <Compile Include="Model\Tables\Category.cs" />
     <Compile Include="Model\Tables\Tag.cs" />
     <Compile Include="Model\PlutoContext.cs" />
     <Compile Include="Model\Tables\Author.cs" />
@@ -101,8 +118,20 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812051203330_InitialModel.resx">
-      <DependentUpon>201812051203330_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812051258427_InitialModel.resx">
+      <DependentUpon>201812051258427_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051300120_AddCategoriesTable.resx">
+      <DependentUpon>201812051300120_AddCategoriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051311388_AddCategoryColumnToCoursesTable.resx">
+      <DependentUpon>201812051311388_AddCategoryColumnToCoursesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051318025_PopulateAuthors.resx">
+      <DependentUpon>201812051318025_PopulateAuthors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051322364_PopulateCourses.resx">
+      <DependentUpon>201812051322364_PopulateCourses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

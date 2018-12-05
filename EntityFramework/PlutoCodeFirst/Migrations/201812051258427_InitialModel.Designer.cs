@@ -7,13 +7,13 @@ namespace PlutoCodeFirst.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Version100 : IMigrationMetadata
+    public sealed partial class InitialModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Version100));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812051203330_Version-1.0.0"; }
+            get { return "201812051258427_InitialModel"; }
         }
         
         string IMigrationMetadata.Source

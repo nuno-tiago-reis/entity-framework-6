@@ -44,11 +44,6 @@ namespace PlutoCodeFirst.Model
 		public Author Author { get; set; }
 
 		/// <summary>
-		/// Gets or sets the category.
-		/// </summary>
-		public Category Category { get; set; }
-
-		/// <summary>
 		/// Gets or sets the tags.
 		/// </summary>
 		public IList<Tag> Tags { get; set; }

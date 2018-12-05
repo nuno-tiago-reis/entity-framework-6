@@ -7,13 +7,13 @@ namespace PlutoCodeFirst.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class DeleteDatePublishedFromCoursesTable : IMigrationMetadata
+    public sealed partial class DeleteDatePublishedColumnFromCoursesTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DeleteDatePublishedFromCoursesTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DeleteDatePublishedColumnFromCoursesTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812051339050_DeleteDatePublishedFromCoursesTable"; }
+            get { return "201812051339050_DeleteDatePublishedColumnFromCoursesTable"; }
         }
         
         string IMigrationMetadata.Source

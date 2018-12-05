@@ -20,11 +20,6 @@ namespace PlutoCodeFirst.Model
 		public DbSet<Author> Authors { get; set; }
 
 		/// <summary>
-		/// Gets or sets the categories.
-		/// </summary>
-		public DbSet<Category> Categories { get; set; }
-
-		/// <summary>
 		/// Initializes a new instance of the <see cref="PlutoContext"/> class.
 		/// </summary>
 		public PlutoContext() : base("name=DefaultConnection")

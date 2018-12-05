@@ -2,7 +2,7 @@ namespace PlutoCodeFirst.Migrations
 {
 	using System.Data.Entity.Migrations;
 
-	public partial class DeleteDatePublishedFromCoursesTable : DbMigration
+	public partial class DeleteDatePublishedColumnFromCoursesTable : DbMigration
 	{
 		/// <inheritdoc />
 		public override void Up()

@@ -57,6 +57,14 @@
     <Compile Include="Migrations\201812051414175_InitialModel.Designer.cs">
       <DependentUpon>201812051414175_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812051425003_RemoveGenresColumnFromVideosTable.cs" />
+    <Compile Include="Migrations\201812051425003_RemoveGenresColumnFromVideosTable.Designer.cs">
+      <DependentUpon>201812051425003_RemoveGenresColumnFromVideosTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051426025_AddGenreColumnToVideosTable.cs" />
+    <Compile Include="Migrations\201812051426025_AddGenreColumnToVideosTable.Designer.cs">
+      <DependentUpon>201812051426025_AddGenreColumnToVideosTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Conventions\ForeignKeyNamingConvention.cs" />
     <Compile Include="Model\Conventions\IndexNamingConvention.cs" />
@@ -74,6 +82,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201812051414175_InitialModel.resx">
       <DependentUpon>201812051414175_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051425003_RemoveGenresColumnFromVideosTable.resx">
+      <DependentUpon>201812051425003_RemoveGenresColumnFromVideosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051426025_AddGenreColumnToVideosTable.resx">
+      <DependentUpon>201812051426025_AddGenreColumnToVideosTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

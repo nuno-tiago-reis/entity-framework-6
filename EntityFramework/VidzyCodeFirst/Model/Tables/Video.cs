@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace VidzyCodeFirst.Model
 {
@@ -16,13 +15,13 @@ namespace VidzyCodeFirst.Model
 		public string Name { get; set; }
 
 		/// <summary>
+		/// Gets or sets the genre.
+		/// </summary>
+		public Genre Genre { get; set; }
+
+		/// <summary>
 		/// Gets or sets the release date.
 		/// </summary>
 		public DateTime ReleaseDate { get; set; }
-
-		/// <summary>
-		/// Gets or sets the genres.
-		/// </summary>
-		public IList<Genre> Genres { get; set; }
 	}
 }

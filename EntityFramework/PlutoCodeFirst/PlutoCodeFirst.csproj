@@ -120,6 +120,22 @@
     <Compile Include="Migrations\201812051506055_UpdatedNullableColumnsInTagsTable.Designer.cs">
       <DependentUpon>201812051506055_UpdatedNullableColumnsInTagsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812051520024_UpdatedNameColumnLengthAndIndexInAuthorsTable.cs" />
+    <Compile Include="Migrations\201812051520024_UpdatedNameColumnLengthAndIndexInAuthorsTable.Designer.cs">
+      <DependentUpon>201812051520024_UpdatedNameColumnLengthAndIndexInAuthorsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051520467_UpdatedNameColumnLengthAndIndexInCoursesTable.cs" />
+    <Compile Include="Migrations\201812051520467_UpdatedNameColumnLengthAndIndexInCoursesTable.Designer.cs">
+      <DependentUpon>201812051520467_UpdatedNameColumnLengthAndIndexInCoursesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051521485_UpdatedNameColumnLengthAndIndexInTagsTable.cs" />
+    <Compile Include="Migrations\201812051521485_UpdatedNameColumnLengthAndIndexInTagsTable.Designer.cs">
+      <DependentUpon>201812051521485_UpdatedNameColumnLengthAndIndexInTagsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051523185_UpdatedDescriptionColumnLengthInCoursesTable.cs" />
+    <Compile Include="Migrations\201812051523185_UpdatedDescriptionColumnLengthInCoursesTable.Designer.cs">
+      <DependentUpon>201812051523185_UpdatedDescriptionColumnLengthInCoursesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Conventions\ForeignKeyNamingConvention.cs" />
     <Compile Include="Model\Conventions\IndexNamingConvention.cs" />
@@ -187,6 +203,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812051506055_UpdatedNullableColumnsInTagsTable.resx">
       <DependentUpon>201812051506055_UpdatedNullableColumnsInTagsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051520024_UpdatedNameColumnLengthAndIndexInAuthorsTable.resx">
+      <DependentUpon>201812051520024_UpdatedNameColumnLengthAndIndexInAuthorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051520467_UpdatedNameColumnLengthAndIndexInCoursesTable.resx">
+      <DependentUpon>201812051520467_UpdatedNameColumnLengthAndIndexInCoursesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051521485_UpdatedNameColumnLengthAndIndexInTagsTable.resx">
+      <DependentUpon>201812051521485_UpdatedNameColumnLengthAndIndexInTagsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051523185_UpdatedDescriptionColumnLengthInCoursesTable.resx">
+      <DependentUpon>201812051523185_UpdatedDescriptionColumnLengthInCoursesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

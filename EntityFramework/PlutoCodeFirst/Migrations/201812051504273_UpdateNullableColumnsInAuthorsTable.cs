@@ -2,7 +2,7 @@ namespace PlutoCodeFirst.Migrations
 {
 	using System.Data.Entity.Migrations;
 
-	public partial class UpdatedNullableColumnsInAuthorsTable : DbMigration
+	public partial class UpdateNullableColumnsInAuthorsTable : DbMigration
 	{
 		/// <inheritdoc />
 		public override void Up()

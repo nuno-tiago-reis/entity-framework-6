@@ -69,10 +69,42 @@
     <Compile Include="Migrations\201812051428252_AddClassificationColumnToVideosTable.Designer.cs">
       <DependentUpon>201812051428252_AddClassificationColumnToVideosTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812061104143_UpdateNullableColumnsInGenresTable.cs" />
+    <Compile Include="Migrations\201812061104143_UpdateNullableColumnsInGenresTable.Designer.cs">
+      <DependentUpon>201812061104143_UpdateNullableColumnsInGenresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061108051_UpdateNullableColumnsInVideosTable.cs" />
+    <Compile Include="Migrations\201812061108051_UpdateNullableColumnsInVideosTable.Designer.cs">
+      <DependentUpon>201812061108051_UpdateNullableColumnsInVideosTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061108541_UpdateClassificationToByteInVideosTable.cs" />
+    <Compile Include="Migrations\201812061108541_UpdateClassificationToByteInVideosTable.Designer.cs">
+      <DependentUpon>201812061108541_UpdateClassificationToByteInVideosTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061110535_UpdateVideosToGenresRelationship.cs" />
+    <Compile Include="Migrations\201812061110535_UpdateVideosToGenresRelationship.Designer.cs">
+      <DependentUpon>201812061110535_UpdateVideosToGenresRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061114418_AddTagsTable.cs" />
+    <Compile Include="Migrations\201812061114418_AddTagsTable.Designer.cs">
+      <DependentUpon>201812061114418_AddTagsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061118060_UpdateNullableColumnsInTagsTable.cs" />
+    <Compile Include="Migrations\201812061118060_UpdateNullableColumnsInTagsTable.Designer.cs">
+      <DependentUpon>201812061118060_UpdateNullableColumnsInTagsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061118416_AddVideosToTagsRelationship.cs" />
+    <Compile Include="Migrations\201812061118416_AddVideosToTagsRelationship.Designer.cs">
+      <DependentUpon>201812061118416_AddVideosToTagsRelationship.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Configurations\GenreConfiguration.cs" />
+    <Compile Include="Model\Configurations\TagConfiguration.cs" />
+    <Compile Include="Model\Configurations\VideoConfiguration.cs" />
     <Compile Include="Model\Conventions\ForeignKeyNamingConvention.cs" />
     <Compile Include="Model\Conventions\IndexNamingConvention.cs" />
     <Compile Include="Model\Tables\Genre.cs" />
+    <Compile Include="Model\Tables\Tag.cs" />
     <Compile Include="Model\Tables\Video.cs" />
     <Compile Include="Model\VidzyContext.cs" />
     <Compile Include="Program.cs" />
@@ -95,6 +127,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812051428252_AddClassificationColumnToVideosTable.resx">
       <DependentUpon>201812051428252_AddClassificationColumnToVideosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061104143_UpdateNullableColumnsInGenresTable.resx">
+      <DependentUpon>201812061104143_UpdateNullableColumnsInGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061108051_UpdateNullableColumnsInVideosTable.resx">
+      <DependentUpon>201812061108051_UpdateNullableColumnsInVideosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061108541_UpdateClassificationToByteInVideosTable.resx">
+      <DependentUpon>201812061108541_UpdateClassificationToByteInVideosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061110535_UpdateVideosToGenresRelationship.resx">
+      <DependentUpon>201812061110535_UpdateVideosToGenresRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061114418_AddTagsTable.resx">
+      <DependentUpon>201812061114418_AddTagsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061118060_UpdateNullableColumnsInTagsTable.resx">
+      <DependentUpon>201812061118060_UpdateNullableColumnsInTagsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061118416_AddVideosToTagsRelationship.resx">
+      <DependentUpon>201812061118416_AddVideosToTagsRelationship.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

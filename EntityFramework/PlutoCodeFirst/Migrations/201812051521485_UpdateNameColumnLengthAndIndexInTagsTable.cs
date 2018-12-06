@@ -2,7 +2,7 @@ namespace PlutoCodeFirst.Migrations
 {
 	using System.Data.Entity.Migrations;
 	
-	public partial class UpdatedNameColumnLengthAndIndexInTagsTable : DbMigration
+	public partial class UpdateNameColumnLengthAndIndexInTagsTable : DbMigration
 	{
 		/// <inheritdoc />
 		public override void Up()

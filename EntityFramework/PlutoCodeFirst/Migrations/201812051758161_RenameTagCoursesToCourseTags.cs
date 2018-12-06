@@ -2,7 +2,7 @@ namespace PlutoCodeFirst.Migrations
 {
 	using System.Data.Entity.Migrations;
 
-	public partial class RenamedTagCoursesToCourseTags : DbMigration
+	public partial class RenameTagCoursesToCourseTags : DbMigration
 	{
 		/// <inheritdoc />
 		public override void Up()

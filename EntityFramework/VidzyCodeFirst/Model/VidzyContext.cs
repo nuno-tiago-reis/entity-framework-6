@@ -13,6 +13,10 @@ namespace VidzyCodeFirst.Model
 		/// Gets or sets the genres.
 		/// </summary>
 		public DbSet<Genre> Genres { get; set; }
+		/// <summary>
+		/// Gets or sets the tags.
+		/// </summary>
+		public DbSet<Tag> Tags { get; set; }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="VidzyContext"/> class.
@@ -27,8 +31,14 @@ namespace VidzyCodeFirst.Model
 		{
 			base.OnModelCreating(modelBuilder);
 
+			// Modify the index and foreign key conventions
 			modelBuilder.Conventions.Add(new IndexNamingConvention());
 			modelBuilder.Conventions.Add(new ForeignKeyNamingConvention());
+
+			// Modify the configurations
+			modelBuilder.Configurations.Add(new GenreConfiguration());
+			modelBuilder.Configurations.Add(new VideoConfiguration());
+			modelBuilder.Configurations.Add(new TagConfiguration());
 		}
 	}
 }

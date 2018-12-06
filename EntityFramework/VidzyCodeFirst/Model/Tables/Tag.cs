@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PlutoCodeFirst.Model
+namespace VidzyCodeFirst.Model
 {
 	public sealed class Tag
 	{
@@ -15,8 +15,8 @@ namespace PlutoCodeFirst.Model
 		public string Name { get; set; }
 
 		/// <summary>
-		/// Gets or sets the courses.
+		/// Gets or sets the videos.
 		/// </summary>
-		public IList<Course> Courses { get; set; }
+		public IList<Video> Videos { get; set; }
 	}
 }

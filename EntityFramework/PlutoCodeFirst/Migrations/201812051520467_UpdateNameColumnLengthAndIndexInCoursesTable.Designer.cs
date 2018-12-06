@@ -7,13 +7,13 @@ namespace PlutoCodeFirst.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class RenamedTagCoursesToCourseTags : IMigrationMetadata
+    public sealed partial class UpdateNameColumnLengthAndIndexInCoursesTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RenamedTagCoursesToCourseTags));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateNameColumnLengthAndIndexInCoursesTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812051758161_RenamedTagCoursesToCourseTags"; }
+            get { return "201812051520467_UpdateNameColumnLengthAndIndexInCoursesTable"; }
         }
         
         string IMigrationMetadata.Source

@@ -9,11 +9,15 @@ namespace VidzyCodeFirst.Migrations
 	[UsedImplicitly]
 	internal sealed class Configuration : DbMigrationsConfiguration<VidzyContext>
 	{
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Configuration"/> class.
+		/// </summary>
 		public Configuration()
 		{
-			AutomaticMigrationsEnabled = false;
+			this.AutomaticMigrationsEnabled = false;
 		}
 
+		/// <inheritdoc />
 		protected override void Seed(VidzyContext context)
 		{
 			context.Genres.AddOrUpdate

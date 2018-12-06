@@ -7,13 +7,13 @@ namespace PlutoCodeFirst.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class UpdatedDescriptionColumnLengthInCoursesTable : IMigrationMetadata
+    public sealed partial class UpdateNullableColumnsInAuthorsTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatedDescriptionColumnLengthInCoursesTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateNullableColumnsInAuthorsTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812051523185_UpdatedDescriptionColumnLengthInCoursesTable"; }
+            get { return "201812051504273_UpdateNullableColumnsInAuthorsTable"; }
         }
         
         string IMigrationMetadata.Source

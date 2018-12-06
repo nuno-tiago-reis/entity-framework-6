@@ -2,7 +2,7 @@
 
 namespace PlutoCodeFirst.Model
 {
-	public sealed class Course
+	public class Course
 	{
 		/// <summary>
 		/// Gets or sets the identifier.
@@ -37,12 +37,12 @@ namespace PlutoCodeFirst.Model
 		/// <summary>
 		/// Gets or sets the author.
 		/// </summary>
-		public Author Author { get; set; }
+		public virtual Author Author { get; set; }
 
 		/// <summary>
 		/// Gets or sets the tags.
 		/// </summary>
-		public IList<Tag> Tags { get; set; }
+		public virtual IList<Tag> Tags { get; set; }
 	}
 
 	public enum CourseLevel

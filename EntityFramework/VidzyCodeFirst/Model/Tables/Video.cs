@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace VidzyCodeFirst.Model
 {
-	public sealed class Video
+	public class Video
 	{
 		/// <summary>
 		/// Gets or sets the identifier.
@@ -23,12 +23,12 @@ namespace VidzyCodeFirst.Model
 		/// <summary>
 		/// Gets or sets the genre.
 		/// </summary>
-		public Genre Genre { get; set; }
+		public virtual Genre Genre { get; set; }
 
 		/// <summary>
 		/// Gets or sets the tags.
 		/// </summary>
-		public IList<Tag> Tags { get; set; }
+		public virtual IList<Tag> Tags { get; set; }
 
 		/// <summary>
 		/// Gets or sets the release date.

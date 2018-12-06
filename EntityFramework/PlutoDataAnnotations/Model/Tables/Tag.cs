@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace PlutoDataAnnotations.Model
 {
 	[Table("Tags")]
-	public sealed class Tag
+	public class Tag
 	{
 		/// <summary>
 		/// Gets or sets the identifier.
@@ -25,6 +25,6 @@ namespace PlutoDataAnnotations.Model
 		/// <summary>
 		/// Gets or sets the courses.
 		/// </summary>
-		public IList<Course> Courses { get; set; }
+		public virtual IList<Course> Courses { get; set; }
 	}
 }

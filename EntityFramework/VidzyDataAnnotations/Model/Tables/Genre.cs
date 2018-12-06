@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace VidzyDataAnnotations.Model
 {
 	[Table("Genres")]
-	public sealed class Genre
+	public class Genre
 	{
 		/// <summary>
 		/// Gets or sets the identifier.
@@ -25,6 +25,6 @@ namespace VidzyDataAnnotations.Model
 		/// <summary>
 		/// Gets or sets the videos.
 		/// </summary>
-		public IList<Video> Videos { get; set; }
+		public virtual IList<Video> Videos { get; set; }
 	}
 }

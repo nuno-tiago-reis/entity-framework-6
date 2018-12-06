@@ -2,7 +2,7 @@
 
 namespace PlutoCodeFirst.Model
 {
-	public sealed class Author
+	public class Author
 	{
 		/// <summary>
 		/// Gets or sets the identifier.
@@ -17,6 +17,6 @@ namespace PlutoCodeFirst.Model
 		/// <summary>
 		/// Gets or sets the courses.
 		/// </summary>
-		public IList<Course> Courses { get; set; }
+		public virtual IList<Course> Courses { get; set; }
 	}
 }

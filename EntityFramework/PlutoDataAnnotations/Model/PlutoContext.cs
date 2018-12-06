@@ -24,7 +24,8 @@ namespace PlutoDataAnnotations.Model
 		/// </summary>
 		public PlutoContext() : base("name=DefaultConnection")
 		{
-			// Nothing to do here.
+			this.Configuration.LazyLoadingEnabled = true;
+			this.Configuration.ProxyCreationEnabled = true;
 		}
 
 		/// <inheritdoc />

@@ -4,9 +4,9 @@ using System.Data.Entity.Migrations;
 
 using JetBrains.Annotations;
 
-using PlutoCodeFirst.Model;
+using PlutoDataAnnotations.Model;
 
-namespace PlutoCodeFirst.Migrations
+namespace PlutoDataAnnotations.Migrations
 {
 	[UsedImplicitly]
 	internal sealed class Configuration : DbMigrationsConfiguration<PlutoContext>

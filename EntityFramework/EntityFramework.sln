@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlutoCodeFirst", "PlutoCode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VidzyCodeFirst", "VidzyCodeFirst\VidzyCodeFirst.csproj", "{06B4CF4A-E994-4B22-AA5B-9F25C5C9BDE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlutoDataAnnotations", "PlutoDataAnnotations\PlutoDataAnnotations.csproj", "{DBA7E541-7A1E-4C42-BD43-606A4F64AC26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VidzyDataAnnotations", "VidzyDataAnnotations\VidzyDataAnnotations.csproj", "{73865050-4C87-4E99-B0FB-C9445680C739}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{06B4CF4A-E994-4B22-AA5B-9F25C5C9BDE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06B4CF4A-E994-4B22-AA5B-9F25C5C9BDE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06B4CF4A-E994-4B22-AA5B-9F25C5C9BDE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBA7E541-7A1E-4C42-BD43-606A4F64AC26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBA7E541-7A1E-4C42-BD43-606A4F64AC26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBA7E541-7A1E-4C42-BD43-606A4F64AC26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBA7E541-7A1E-4C42-BD43-606A4F64AC26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73865050-4C87-4E99-B0FB-C9445680C739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73865050-4C87-4E99-B0FB-C9445680C739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73865050-4C87-4E99-B0FB-C9445680C739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73865050-4C87-4E99-B0FB-C9445680C739}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

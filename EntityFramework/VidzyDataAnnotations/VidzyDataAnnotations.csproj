@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73865050-4C87-4E99-B0FB-C9445680C739}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VidzyDataAnnotations</RootNamespace>
+    <AssemblyName>VidzyDataAnnotations</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\Packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\Packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2018.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\Packages\JetBrains.Annotations.2018.2.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201812051414175_InitialModel.cs" />
+    <Compile Include="Migrations\201812051414175_InitialModel.Designer.cs">
+      <DependentUpon>201812051414175_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051425003_RemoveGenresColumnFromVideosTable.cs" />
+    <Compile Include="Migrations\201812051425003_RemoveGenresColumnFromVideosTable.Designer.cs">
+      <DependentUpon>201812051425003_RemoveGenresColumnFromVideosTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051426025_AddGenreColumnToVideosTable.cs" />
+    <Compile Include="Migrations\201812051426025_AddGenreColumnToVideosTable.Designer.cs">
+      <DependentUpon>201812051426025_AddGenreColumnToVideosTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812051428252_AddClassificationColumnToVideosTable.cs" />
+    <Compile Include="Migrations\201812051428252_AddClassificationColumnToVideosTable.Designer.cs">
+      <DependentUpon>201812051428252_AddClassificationColumnToVideosTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061104143_UpdateNullableColumnsInGenresTable.cs" />
+    <Compile Include="Migrations\201812061104143_UpdateNullableColumnsInGenresTable.Designer.cs">
+      <DependentUpon>201812061104143_UpdateNullableColumnsInGenresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061108051_UpdateNullableColumnsInVideosTable.cs" />
+    <Compile Include="Migrations\201812061108051_UpdateNullableColumnsInVideosTable.Designer.cs">
+      <DependentUpon>201812061108051_UpdateNullableColumnsInVideosTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061108541_UpdateClassificationToByteInVideosTable.cs" />
+    <Compile Include="Migrations\201812061108541_UpdateClassificationToByteInVideosTable.Designer.cs">
+      <DependentUpon>201812061108541_UpdateClassificationToByteInVideosTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061110535_UpdateVideosToGenresRelationship.cs" />
+    <Compile Include="Migrations\201812061110535_UpdateVideosToGenresRelationship.Designer.cs">
+      <DependentUpon>201812061110535_UpdateVideosToGenresRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061114418_AddTagsTable.cs" />
+    <Compile Include="Migrations\201812061114418_AddTagsTable.Designer.cs">
+      <DependentUpon>201812061114418_AddTagsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061118060_UpdateNullableColumnsInTagsTable.cs" />
+    <Compile Include="Migrations\201812061118060_UpdateNullableColumnsInTagsTable.Designer.cs">
+      <DependentUpon>201812061118060_UpdateNullableColumnsInTagsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061118416_AddVideosToTagsRelationship.cs" />
+    <Compile Include="Migrations\201812061118416_AddVideosToTagsRelationship.Designer.cs">
+      <DependentUpon>201812061118416_AddVideosToTagsRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812061158264_RenameVideoTagsTable.cs" />
+    <Compile Include="Migrations\201812061158264_RenameVideoTagsTable.Designer.cs">
+      <DependentUpon>201812061158264_RenameVideoTagsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Conventions\ForeignKeyNamingConvention.cs" />
+    <Compile Include="Model\Conventions\IndexNamingConvention.cs" />
+    <Compile Include="Model\Tables\Genre.cs" />
+    <Compile Include="Model\Tables\Tag.cs" />
+    <Compile Include="Model\Tables\Video.cs" />
+    <Compile Include="Model\VidzyContext.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812051414175_InitialModel.resx">
+      <DependentUpon>201812051414175_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051425003_RemoveGenresColumnFromVideosTable.resx">
+      <DependentUpon>201812051425003_RemoveGenresColumnFromVideosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051426025_AddGenreColumnToVideosTable.resx">
+      <DependentUpon>201812051426025_AddGenreColumnToVideosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812051428252_AddClassificationColumnToVideosTable.resx">
+      <DependentUpon>201812051428252_AddClassificationColumnToVideosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061104143_UpdateNullableColumnsInGenresTable.resx">
+      <DependentUpon>201812061104143_UpdateNullableColumnsInGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061108051_UpdateNullableColumnsInVideosTable.resx">
+      <DependentUpon>201812061108051_UpdateNullableColumnsInVideosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061108541_UpdateClassificationToByteInVideosTable.resx">
+      <DependentUpon>201812061108541_UpdateClassificationToByteInVideosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061110535_UpdateVideosToGenresRelationship.resx">
+      <DependentUpon>201812061110535_UpdateVideosToGenresRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061114418_AddTagsTable.resx">
+      <DependentUpon>201812061114418_AddTagsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061118060_UpdateNullableColumnsInTagsTable.resx">
+      <DependentUpon>201812061118060_UpdateNullableColumnsInTagsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061118416_AddVideosToTagsRelationship.resx">
+      <DependentUpon>201812061118416_AddVideosToTagsRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061158264_RenameVideoTagsTable.resx">
+      <DependentUpon>201812061158264_RenameVideoTagsTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

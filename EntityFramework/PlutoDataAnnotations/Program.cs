@@ -11,19 +11,20 @@ namespace PlutoDataAnnotations
 	{
 		public static void Main(string[] args)
 		{
-			var context = new PlutoContext();
+			using (var context = new PlutoContext())
+			{
+				// LINQ syntax
+				Console.WriteLine(@"LINQ Syntax");
+				Console.WriteLine();
 
-			// LINQ syntax
-			Console.WriteLine(@"LINQ Syntax");
-			Console.WriteLine();
+				QueryUsingLinqSyntax(context);
 
-			QueryUsingLinqSyntax(context);
+				// Extension syntax
+				Console.WriteLine(@"Extension Syntax");
+				Console.WriteLine();
 
-			// Extension syntax
-			Console.WriteLine(@"Extension Syntax");
-			Console.WriteLine();
-
-			QueryUsingExtensionSyntax(context);
+				QueryUsingExtensionSyntax(context);
+			}
 		}
 
 		/// <summary>

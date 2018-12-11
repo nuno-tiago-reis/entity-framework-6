@@ -68,6 +68,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\IAuthorRepository.cs" />
+    <Compile Include="Core\Repositories\ICourseRepository.cs" />
+    <Compile Include="Core\Repositories\IRepository.cs" />
     <Compile Include="Migrations\201812051258427_InitialModel.cs" />
     <Compile Include="Migrations\201812051258427_InitialModel.Designer.cs">
       <DependentUpon>201812051258427_InitialModel.cs</DependentUpon>
@@ -146,10 +150,14 @@
     <Compile Include="Model\Configurations\CourseConfiguration.cs" />
     <Compile Include="Model\Conventions\ForeignKeyNamingConvention.cs" />
     <Compile Include="Model\Conventions\IndexNamingConvention.cs" />
-    <Compile Include="Model\Tables\Tag.cs" />
+    <Compile Include="Model\Domain\Tag.cs" />
     <Compile Include="Model\PlutoContext.cs" />
-    <Compile Include="Model\Tables\Author.cs" />
-    <Compile Include="Model\Tables\Course.cs" />
+    <Compile Include="Model\Domain\Author.cs" />
+    <Compile Include="Model\Domain\Course.cs" />
+    <Compile Include="Model\Repositories\AuthorRepository.cs" />
+    <Compile Include="Model\Repositories\CourseRepository.cs" />
+    <Compile Include="Model\Repositories\Repository.cs" />
+    <Compile Include="Model\UnitOfWork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

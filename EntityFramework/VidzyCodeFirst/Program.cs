@@ -9,121 +9,122 @@ namespace VidzyCodeFirst
 	{
 		public static void Main(string[] args)
 		{
-			var context = new VidzyContext();
-
-			#region Action Videos by Name
-			Console.WriteLine(@"#Action Videos");
-
-			var actionVideos = context.Videos
-				.Where(video => video.Genre.Name == "Action")
-				.OrderBy(video => video.Name);
-
-			foreach (var row in actionVideos)
+			using (var context = new VidzyContext())
 			{
-				Console.WriteLine($@" {row.Name}");
-			}
-			Console.WriteLine();
-			#endregion
+				#region Action Videos by Name
+				Console.WriteLine(@"#Action Videos");
 
-			#region Gold Drama Videos by Release Date
-			Console.WriteLine(@"#Gold Drama Videos");
+				var actionVideos = context.Videos
+					.Where(video => video.Genre.Name == "Action")
+					.OrderBy(video => video.Name);
 
-			var dramaVideos = context.Videos
-				.Where(video => video.Genre.Name == "Drama" && video.Classification == Classification.Gold)
-				.OrderBy(video => video.ReleaseDate);
-
-			foreach (var row in dramaVideos)
-			{
-				Console.WriteLine($@" {row.Name}");
-			}
-			Console.WriteLine();
-			#endregion
-
-			#region Videos with Genre
-			Console.WriteLine(@"#Videos with Genre");
-
-			var videosWithGenre = context.Videos.Join
-			(
-				context.Genres,
-				video => video.GenreID,
-				genre => genre.ID,
-				(video, genre) => new
+				foreach (var row in actionVideos)
 				{
-					VideoName = video.Name,
-					VideoGenre = genre.Name
+					Console.WriteLine($@" {row.Name}");
 				}
-			);
-
-			foreach (var row in videosWithGenre)
-			{
-				Console.WriteLine($@" {row.VideoGenre} ({row.VideoGenre})");
-			}
-			Console.WriteLine();
-			#endregion
-
-			#region Videos by Classification
-			Console.WriteLine(@"#Videos with Genre");
-
-			var videosByClassification = context.Videos
-				.GroupBy(video => video.Classification)
-				.Select(classificationGroup => new
-				{
-					Classification = classificationGroup.Key,
-					Videos = classificationGroup.OrderBy(video => video.Name)
-				});
-
-			foreach (var row in videosByClassification)
-			{
-				Console.WriteLine($@" {row.Classification} ({row.Videos.Count()})");
-				foreach (var video in row.Videos)
-					Console.WriteLine($@"  {video.ID}: {video.Name} ({video.Genre.Name})");
 				Console.WriteLine();
-			}
-			Console.WriteLine();
-			#endregion
+				#endregion
 
-			#region Classifications with Video Count
-			Console.WriteLine(@"#Classifications with Video Count");
+				#region Gold Drama Videos by Release Date
+				Console.WriteLine(@"#Gold Drama Videos");
 
-			var classificationsWithVideoCount = context.Videos
-				.GroupBy(video => video.Classification)
-				.Select(classification => new
+				var dramaVideos = context.Videos
+					.Where(video => video.Genre.Name == "Drama" && video.Classification == Classification.Gold)
+					.OrderBy(video => video.ReleaseDate);
+
+				foreach (var row in dramaVideos)
 				{
-					Classification = classification.Key,
-					Count = classification.Count()
-				})
-				.OrderByDescending(classification => classification.Count);
+					Console.WriteLine($@" {row.Name}");
+				}
+				Console.WriteLine();
+				#endregion
 
-			foreach (var row in classificationsWithVideoCount)
-			{
-				Console.WriteLine($@" {row.Classification} ({row.Count})");
-			}
-			Console.WriteLine();
-			#endregion
+				#region Videos with Genre
+				Console.WriteLine(@"#Videos with Genre");
 
-			#region Genres with Video Count
-			Console.WriteLine(@"#Genres with Video Count");
-
-			var genresWithVideoCount = context.Genres
-				.GroupJoin
+				var videosWithGenre = context.Videos.Join
 				(
-					context.Videos,
-					genre => genre.ID,
+					context.Genres,
 					video => video.GenreID,
-					(genre, videos) => new
+					genre => genre.ID,
+					(video, genre) => new
 					{
-						Genre = genre.Name,
-						Count = videos.Count()
+						VideoName = video.Name,
+						VideoGenre = genre.Name
 					}
-				)
-				.OrderByDescending(genre => genre.Count);
+				);
 
-			foreach (var row in genresWithVideoCount)
-			{
-				Console.WriteLine($@" {row.Genre} ({row.Count})");
+				foreach (var row in videosWithGenre)
+				{
+					Console.WriteLine($@" {row.VideoGenre} ({row.VideoGenre})");
+				}
+				Console.WriteLine();
+				#endregion
+
+				#region Videos by Classification
+				Console.WriteLine(@"#Videos with Genre");
+
+				var videosByClassification = context.Videos
+					.GroupBy(video => video.Classification)
+					.Select(classificationGroup => new
+					{
+						Classification = classificationGroup.Key,
+						Videos = classificationGroup.OrderBy(video => video.Name)
+					});
+
+				foreach (var row in videosByClassification)
+				{
+					Console.WriteLine($@" {row.Classification} ({row.Videos.Count()})");
+					foreach (var video in row.Videos)
+						Console.WriteLine($@"  {video.ID}: {video.Name} ({video.Genre.Name})");
+					Console.WriteLine();
+				}
+				Console.WriteLine();
+				#endregion
+
+				#region Classifications with Video Count
+				Console.WriteLine(@"#Classifications with Video Count");
+
+				var classificationsWithVideoCount = context.Videos
+					.GroupBy(video => video.Classification)
+					.Select(classification => new
+					{
+						Classification = classification.Key,
+						Count = classification.Count()
+					})
+					.OrderByDescending(classification => classification.Count);
+
+				foreach (var row in classificationsWithVideoCount)
+				{
+					Console.WriteLine($@" {row.Classification} ({row.Count})");
+				}
+				Console.WriteLine();
+				#endregion
+
+				#region Genres with Video Count
+				Console.WriteLine(@"#Genres with Video Count");
+
+				var genresWithVideoCount = context.Genres
+					.GroupJoin
+					(
+						context.Videos,
+						genre => genre.ID,
+						video => video.GenreID,
+						(genre, videos) => new
+						{
+							Genre = genre.Name,
+							Count = videos.Count()
+						}
+					)
+					.OrderByDescending(genre => genre.Count);
+
+				foreach (var row in genresWithVideoCount)
+				{
+					Console.WriteLine($@" {row.Genre} ({row.Count})");
+				}
+				Console.WriteLine();
+				#endregion
 			}
-			Console.WriteLine();
-			#endregion
 		}
 	}
 }

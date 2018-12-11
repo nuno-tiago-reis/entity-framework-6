@@ -11,19 +11,23 @@ namespace PlutoCodeFirst
 	{
 		public static void Main(string[] args)
 		{
-			var context = new PlutoContext();
+			using (var context = new PlutoContext())
+			{
+				// LINQ syntax
+				Console.WriteLine(@"LINQ Syntax");
+				Console.WriteLine();
 
-			// LINQ syntax
-			Console.WriteLine(@"LINQ Syntax");
-			Console.WriteLine();
+				QueryUsingLinqSyntax(context);
 
-			QueryUsingLinqSyntax(context);
+				// Extension syntax
+				Console.WriteLine(@"Extension Syntax");
+				Console.WriteLine();
 
-			// Extension syntax
-			Console.WriteLine(@"Extension Syntax");
-			Console.WriteLine();
+				QueryUsingExtensionSyntax(context);
 
-			QueryUsingExtensionSyntax(context);
+				// Repositories
+				QueryUsingRepositories();
+			}
 		}
 
 		/// <summary>
@@ -376,6 +380,38 @@ namespace PlutoCodeFirst
 			Console.WriteLine($@"Average price: {averageCoursePrice}");
 			Console.WriteLine();
 			#endregion
+		}
+
+		/// <summary>
+		/// Queries using repositories.
+		/// </summary>
+		private static void QueryUsingRepositories()
+		{
+			using (var unitOfWork = new UnitOfWork(new PlutoContext()))
+			{
+				// Example 1
+				var course = unitOfWork.Courses.Get(1);
+
+				Console.WriteLine(@"#Unit Of Work: Course");
+				Console.WriteLine(course.Name);
+				Console.WriteLine();
+
+				// Example 2
+				var courses = unitOfWork.Courses.GetCoursesWithAuthors(1, 4);
+
+				Console.WriteLine(@"#Unit Of Work: Courses");
+				foreach (var course1 in courses)
+				{
+					Console.WriteLine(course1.Name);
+				}
+				Console.WriteLine();
+
+				// Example 3
+				var author = unitOfWork.Authors.GetAuthorWithCourses(1);
+				unitOfWork.Courses.RemoveRange(author.Courses);
+				unitOfWork.Authors.Remove(author);
+				unitOfWork.Complete();
+			}
 		}
 	}
 }

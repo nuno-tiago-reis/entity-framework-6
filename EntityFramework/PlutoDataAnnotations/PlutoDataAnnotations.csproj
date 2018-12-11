@@ -145,12 +145,12 @@
       <DependentUpon>201812061204320_RenameCourseTagsToTagCourses.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Conventions\ForeignKeyNamingConvention.cs" />
-    <Compile Include="Model\Conventions\IndexNamingConvention.cs" />
-    <Compile Include="Model\Tables\Tag.cs" />
-    <Compile Include="Model\PlutoContext.cs" />
-    <Compile Include="Model\Tables\Author.cs" />
-    <Compile Include="Model\Tables\Course.cs" />
+    <Compile Include="Persistence\Conventions\ForeignKeyNamingConvention.cs" />
+    <Compile Include="Persistence\Conventions\IndexNamingConvention.cs" />
+    <Compile Include="Persistence\Domain\Tag.cs" />
+    <Compile Include="Persistence\PlutoContext.cs" />
+    <Compile Include="Persistence\Domain\Author.cs" />
+    <Compile Include="Persistence\Domain\Course.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

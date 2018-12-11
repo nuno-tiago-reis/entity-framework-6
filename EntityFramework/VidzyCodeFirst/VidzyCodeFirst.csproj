@@ -98,15 +98,15 @@
       <DependentUpon>201812061118416_AddVideosToTagsRelationship.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Configurations\GenreConfiguration.cs" />
-    <Compile Include="Model\Configurations\TagConfiguration.cs" />
-    <Compile Include="Model\Configurations\VideoConfiguration.cs" />
-    <Compile Include="Model\Conventions\ForeignKeyNamingConvention.cs" />
-    <Compile Include="Model\Conventions\IndexNamingConvention.cs" />
-    <Compile Include="Model\Tables\Genre.cs" />
-    <Compile Include="Model\Tables\Tag.cs" />
-    <Compile Include="Model\Tables\Video.cs" />
-    <Compile Include="Model\VidzyContext.cs" />
+    <Compile Include="Persistence\Configurations\GenreConfiguration.cs" />
+    <Compile Include="Persistence\Configurations\TagConfiguration.cs" />
+    <Compile Include="Persistence\Configurations\VideoConfiguration.cs" />
+    <Compile Include="Persistence\Conventions\ForeignKeyNamingConvention.cs" />
+    <Compile Include="Persistence\Conventions\IndexNamingConvention.cs" />
+    <Compile Include="Persistence\Domain\Genre.cs" />
+    <Compile Include="Persistence\Domain\Tag.cs" />
+    <Compile Include="Persistence\Domain\Video.cs" />
+    <Compile Include="Persistence\VidzyContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

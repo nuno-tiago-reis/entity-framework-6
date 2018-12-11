@@ -145,19 +145,19 @@
       <DependentUpon>201812051758161_RenameTagCoursesToCourseTags.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Configurations\AuthorConfiguration.cs" />
-    <Compile Include="Model\Configurations\TagConfiguration.cs" />
-    <Compile Include="Model\Configurations\CourseConfiguration.cs" />
-    <Compile Include="Model\Conventions\ForeignKeyNamingConvention.cs" />
-    <Compile Include="Model\Conventions\IndexNamingConvention.cs" />
-    <Compile Include="Model\Domain\Tag.cs" />
-    <Compile Include="Model\PlutoContext.cs" />
-    <Compile Include="Model\Domain\Author.cs" />
-    <Compile Include="Model\Domain\Course.cs" />
-    <Compile Include="Model\Repositories\AuthorRepository.cs" />
-    <Compile Include="Model\Repositories\CourseRepository.cs" />
-    <Compile Include="Model\Repositories\Repository.cs" />
-    <Compile Include="Model\UnitOfWork.cs" />
+    <Compile Include="Persistence\Configurations\AuthorConfiguration.cs" />
+    <Compile Include="Persistence\Configurations\TagConfiguration.cs" />
+    <Compile Include="Persistence\Configurations\CourseConfiguration.cs" />
+    <Compile Include="Persistence\Conventions\ForeignKeyNamingConvention.cs" />
+    <Compile Include="Persistence\Conventions\IndexNamingConvention.cs" />
+    <Compile Include="Persistence\Domain\Tag.cs" />
+    <Compile Include="Persistence\PlutoContext.cs" />
+    <Compile Include="Persistence\Domain\Author.cs" />
+    <Compile Include="Persistence\Domain\Course.cs" />
+    <Compile Include="Persistence\Repositories\AuthorRepository.cs" />
+    <Compile Include="Persistence\Repositories\CourseRepository.cs" />
+    <Compile Include="Persistence\Repositories\Repository.cs" />
+    <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
